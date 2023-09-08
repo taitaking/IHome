@@ -1,8 +1,8 @@
 package main
 
 import (
-	"IHome/GetUserHouses/handler"
-	example "IHome/GetUserHouses/proto/example"
+	"GetUserHouses/handler"
+	example "GetUserHouses/proto/example"
 	"github.com/micro/go-log"
 	"github.com/micro/go-micro"
 	"github.com/micro/go-micro/service/grpc"

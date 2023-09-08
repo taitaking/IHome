@@ -1,13 +1,13 @@
 package handler
 
 import (
+	"IhomeWeb/model"
+	"IhomeWeb/utils"
+	example "PostHousesImage/proto/example"
 	"context"
-	example "IHome/PostHousesImage/proto/example"
 	"github.com/astaxie/beego"
-	"IHome/IhomeWeb/utils"
-	"path"
-	"IHome/IhomeWeb/model"
 	"github.com/astaxie/beego/orm"
+	"path"
 	"strconv"
 )
 

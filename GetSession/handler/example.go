@@ -1,11 +1,11 @@
 package handler
 
 import (
+	example "GetSession/proto/example"
+	"IhomeWeb/utils"
 	"context"
-	example "IHome/GetSession/proto/example"
-	"IHome/IhomeWeb/utils"
-	"log"
 	"github.com/garyburd/redigo/redis"
+	"log"
 )
 
 type Example struct{}

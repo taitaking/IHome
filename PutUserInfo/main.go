@@ -1,12 +1,12 @@
 package main
 
 import (
-	"IHome/PutUserInfo/handler"
+	"PutUserInfo/handler"
 	"github.com/micro/go-log"
 	"github.com/micro/go-micro"
 	"github.com/micro/go-micro/service/grpc"
 
-	example "IHome/PutUserInfo/proto/example"
+	example "PutUserInfo/proto/example"
 )
 
 func main() {

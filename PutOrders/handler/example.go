@@ -1,15 +1,15 @@
 package handler
 
 import (
+	"IhomeWeb/model"
+	"IhomeWeb/utils"
+	example "PutOrders/proto/example"
 	"context"
+	"github.com/astaxie/beego"
+	"github.com/astaxie/beego/orm"
 	"log"
-	example "IHome/PutOrders/proto/example"
 	"reflect"
 	"strconv"
-	"github.com/astaxie/beego"
-	"IHome/IhomeWeb/utils"
-	"github.com/astaxie/beego/orm"
-	"IHome/IhomeWeb/model"
 )
 
 type Example struct{}
@@ -17,8 +17,8 @@ type Example struct{}
 func (e *Example) PutOrders(ctx context.Context, req *example.Request, rsp *example.Response) error {
 	beego.Info("==============api/v1.0/orders  Postorders post succ!!=============")
 	//创建返回空间
-	rsp.Errno  =  utils.RECODE_OK
-	rsp.Errmsg  = utils.RecodeText(rsp.Errno)
+	rsp.Errno = utils.RECODE_OK
+	rsp.Errmsg = utils.RecodeText(rsp.Errno)
 
 	//1通过session得到当前的user_id
 	//构建连接缓存的数据
@@ -30,17 +30,17 @@ func (e *Example) PutOrders(ctx context.Context, req *example.Request, rsp *exam
 		return nil
 	}
 	//拼接key
-	sessioniduserid :=  req.Sessionid + "user_id"
+	sessioniduserid := req.Sessionid + "user_id"
 
 	//查询当前用户的userid
-	value_id :=bm.Get(sessioniduserid)
-	beego.Info(value_id,reflect.TypeOf(value_id))
-	user_id :=  int(value_id.([]uint8)[0])
-	beego.Info(user_id ,reflect.TypeOf(user_id))
+	value_id := bm.Get(sessioniduserid)
+	beego.Info(value_id, reflect.TypeOf(value_id))
+	user_id := int(value_id.([]uint8)[0])
+	beego.Info(user_id, reflect.TypeOf(user_id))
 
 	//2通过url参数得到当前订单id
 
-	order_id,_ := strconv.Atoi(req.Orderid)
+	order_id, _ := strconv.Atoi(req.Orderid)
 
 	//3解析客户端请求的json数据得到action参数
 	beego.Info(req.Action)
@@ -52,19 +52,18 @@ func (e *Example) PutOrders(ctx context.Context, req *example.Request, rsp *exam
 
 	//创建订单对象
 	order := models.OrderHouse{}
-	err  = o.QueryTable("order_house").Filter("id", order_id).Filter("status", models.ORDER_STATUS_WAIT_ACCEPT).One(&order)
+	err = o.QueryTable("order_house").Filter("id", order_id).Filter("status", models.ORDER_STATUS_WAIT_ACCEPT).One(&order)
 	if err != nil {
 
-		rsp.Errno  =  utils.RECODE_DATAERR
-		rsp.Errmsg  = utils.RecodeText(rsp.Errno)
+		rsp.Errno = utils.RECODE_DATAERR
+		rsp.Errmsg = utils.RecodeText(rsp.Errno)
 		return nil
 	}
 
 	if _, err := o.LoadRelated(&order, "House"); err != nil {
 
-
-		rsp.Errno  =  utils.RECODE_DATAERR
-		rsp.Errmsg  = utils.RecodeText(rsp.Errno)
+		rsp.Errno = utils.RECODE_DATAERR
+		rsp.Errmsg = utils.RecodeText(rsp.Errno)
 		return nil
 	}
 	house := order.House
@@ -72,8 +71,8 @@ func (e *Example) PutOrders(ctx context.Context, req *example.Request, rsp *exam
 	//返回错误json
 	if house.User.Id != user_id {
 
-		rsp.Errno  =  utils.RECODE_DATAERR
-		rsp.Errmsg  = "订单用户不匹配,操作无效"
+		rsp.Errno = utils.RECODE_DATAERR
+		rsp.Errmsg = "订单用户不匹配,操作无效"
 		return nil
 	}
 	//7action为accept
@@ -95,16 +94,14 @@ func (e *Example) PutOrders(ctx context.Context, req *example.Request, rsp *exam
 		beego.Debug("action = reject!, reason is ", reason)
 	}
 
-
 	//更新该数据到数据库中
 	if _, err := o.Update(&order); err != nil {
 
-		rsp.Errno  =  utils.RECODE_DATAERR
-		rsp.Errmsg  = utils.RecodeText(rsp.Errno)
+		rsp.Errno = utils.RECODE_DATAERR
+		rsp.Errmsg = utils.RecodeText(rsp.Errno)
 		return nil
 	}
 
 	return nil
 
 }
-

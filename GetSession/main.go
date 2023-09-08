@@ -1,8 +1,8 @@
 package main
 
 import (
-	"IHome/GetSession/handler"
-	example "IHome/GetSession/proto/example"
+	"GetSession/handler"
+	example "GetSession/proto/example"
 	"github.com/micro/go-log"
 	"github.com/micro/go-micro"
 	"github.com/micro/go-micro/service/grpc"

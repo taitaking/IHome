@@ -1,14 +1,14 @@
 package handler
 
 import (
+	"IhomeWeb/model"
+	"IhomeWeb/utils"
+	example "PostAvatar/proto/example"
 	"context"
-	example "IHome/PostAvatar/proto/example"
-	"IHome/IhomeWeb/utils"
-	"path"
-	"log"
-	"github.com/garyburd/redigo/redis"
 	"github.com/astaxie/beego/orm"
-	"IHome/IhomeWeb/model"
+	"github.com/garyburd/redigo/redis"
+	"log"
+	"path"
 )
 
 type Example struct{}

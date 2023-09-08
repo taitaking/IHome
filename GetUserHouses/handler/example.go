@@ -1,16 +1,16 @@
 package handler
 
 import (
+	example "GetUserHouses/proto/example"
+	"IhomeWeb/model"
+	"IhomeWeb/utils"
 	"context"
-	example "IHome/GetUserHouses/proto/example"
-	"github.com/astaxie/beego"
-	"IHome/IhomeWeb/utils"
-	"log"
-	"github.com/garyburd/redigo/redis"
-	"github.com/astaxie/beego/orm"
-	"IHome/IhomeWeb/model"
 	"encoding/json"
 	"fmt"
+	"github.com/astaxie/beego"
+	"github.com/astaxie/beego/orm"
+	"github.com/garyburd/redigo/redis"
+	"log"
 )
 
 type Example struct{}
@@ -29,7 +29,7 @@ func (e *Example) GetUserHouses(ctx context.Context, req *example.Request, rsp *
 	}
 	value := bm.Get(req.Sessionid + "user_id")
 	user_id, _ := redis.Int(value, nil)
-	fmt.Println("getuserhouses user id is",user_id)
+	fmt.Println("getuserhouses user id is", user_id)
 	o := orm.NewOrm()
 	var houses []models.House
 	num, err := o.QueryTable("house").Filter("user__id", user_id).All(&houses)

@@ -1,10 +1,10 @@
 package main
 
 import (
+	"PutOrders/handler"
+	example "PutOrders/proto/example"
 	"github.com/micro/go-log"
 	"github.com/micro/go-micro"
-	"IHome/PutOrders/handler"
-	example "IHome/PutOrders/proto/example"
 )
 
 func main() {
@@ -19,7 +19,6 @@ func main() {
 
 	// Register Handler
 	example.RegisterExampleHandler(service.Server(), new(handler.Example))
-
 
 	// Run service
 	if err := service.Run(); err != nil {

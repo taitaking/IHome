@@ -1,13 +1,13 @@
 package handler
 
 import (
+	"IhomeWeb/model"
+	"IhomeWeb/utils"
+	example "PutUserInfo/proto/example"
 	"context"
-	example "IHome/PutUserInfo/proto/example"
-	"IHome/IhomeWeb/utils"
-	"log"
-	"github.com/garyburd/redigo/redis"
-	"IHome/IhomeWeb/model"
 	"github.com/astaxie/beego/orm"
+	"github.com/garyburd/redigo/redis"
+	"log"
 	"time"
 )
 

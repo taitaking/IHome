@@ -1,9 +1,9 @@
 package handler
 
 import (
-	example "IHome/GetSmscd/proto/example"
-	"IHome/IhomeWeb/model"
-	"IHome/IhomeWeb/utils"
+	example "GetSmscd/proto/example"
+	"IhomeWeb/model"
+	"IhomeWeb/utils"
 	"context"
 	"fmt"
 	"github.com/astaxie/beego/orm"

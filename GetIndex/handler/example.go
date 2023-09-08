@@ -3,14 +3,13 @@ package handler
 import (
 	"context"
 
-
-	example "IHome/GetIndex/proto/example"
-	"time"
-	"IHome/IhomeWeb/utils"
-	"IHome/IhomeWeb/model"
-	"github.com/astaxie/beego/orm"
-	"github.com/astaxie/beego"
+	example "GetIndex/proto/example"
+	"IhomeWeb/model"
+	"IhomeWeb/utils"
 	"encoding/json"
+	"github.com/astaxie/beego"
+	"github.com/astaxie/beego/orm"
+	"time"
 )
 
 type Example struct{}
@@ -18,16 +17,15 @@ type Example struct{}
 // Call is a single request handler called via client.Call or the generated client code
 func (e *Example) GetIndex(ctx context.Context, req *example.Request, rsp *example.Response) error {
 	//创建返回空间
-	rsp.Errno  =  utils.RECODE_OK
-	rsp.Errmsg  = utils.RecodeText(rsp.Errno)
-
+	rsp.Errno = utils.RECODE_OK
+	rsp.Errmsg = utils.RecodeText(rsp.Errno)
 
 	data := []interface{}{}
 	//1 从缓存服务器中请求 "home_page_data" 字段,如果有值就直接返回
 	//先从缓存中获取房屋数据,将缓存数据返回前端即可
-	bm ,err :=utils.RedisOpen(utils.G_server_name,utils.G_redis_addr,
-		utils.G_redis_port,utils.G_redis_dbnum)
-	if err !=nil{
+	bm, err := utils.RedisOpen(utils.G_server_name, utils.G_redis_addr,
+		utils.G_redis_port, utils.G_redis_dbnum)
+	if err != nil {
 		rsp.Errno = utils.RECODE_DBERR
 		rsp.Errmsg = utils.RecodeText(rsp.Errno)
 		return nil
@@ -57,13 +55,12 @@ func (e *Example) GetIndex(ctx context.Context, req *example.Request, rsp *examp
 		}
 
 	}
-	beego.Info(data,houses)
+	beego.Info(data, houses)
 	//将data存入缓存数据
 	house_page_value, _ = json.Marshal(data)
 	bm.Put(house_page_key, house_page_value, 3600*time.Second)
 
-	rsp.Max= house_page_value.([]byte)
+	rsp.Max = house_page_value.([]byte)
 	return nil
 
 }
-

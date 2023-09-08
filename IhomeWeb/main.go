@@ -4,10 +4,10 @@ import (
 	"github.com/micro/go-log"
 	"github.com/micro/go-micro/web"
 
-	_ "IHome/IhomeWeb/model"
+	_ "IhomeWeb/model"
 	"github.com/julienschmidt/httprouter"
 
-	"IHome/IhomeWeb/handler"
+	"IhomeWeb/handler"
 	"net/http"
 )
 

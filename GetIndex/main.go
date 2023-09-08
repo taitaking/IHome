@@ -1,11 +1,11 @@
 package main
 
 import (
+	"GetIndex/handler"
 	"github.com/micro/go-log"
 	"github.com/micro/go-micro"
-	"IHome/GetIndex/handler"
 
-	example "IHome/GetIndex/proto/example"
+	example "GetIndex/proto/example"
 )
 
 func main() {

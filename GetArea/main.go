@@ -1,8 +1,8 @@
 package main
 
 import (
-	"IHome/GetArea/handler"
-	example "IHome/GetArea/proto/example"
+	"GetArea/handler"
+	example "GetArea/proto/example"
 	"github.com/micro/go-log"
 	"github.com/micro/go-micro"
 	"github.com/micro/go-micro/service/grpc"

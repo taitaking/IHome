@@ -6,7 +6,7 @@ import (
 	//go语言的sql的驱动
 	_ "github.com/go-sql-driver/mysql"
 	//已经创建好的工具包
-	"IHome/IhomeWeb/utils"
+	"IhomeWeb/utils"
 	//time包关于时间信息
 	"time"
 	//beego
@@ -50,13 +50,13 @@ type House struct {
 	Ctime           time.Time     `orm:"auto_now_add;type(datetime)" json:"ctime"`
 }
 
-//首页最高展示的房屋数量
+// 首页最高展示的房屋数量
 var HOME_PAGE_MAX_HOUSES int = 5
 
-//房屋列表页面每页显示条目数
+// 房屋列表页面每页显示条目数
 var HOUSE_LIST_PAGE_CAPACITY int = 2
 
-//处理房子信息
+// 处理房子信息
 func (this *House) To_house_info() interface{} {
 	house_info := map[string]interface{}{
 		"house_id":    this.Id,
@@ -73,7 +73,8 @@ func (this *House) To_house_info() interface{} {
 
 	return house_info
 }
-//处理1个房子的全部信息
+
+// 处理1个房子的全部信息
 func (this *House) To_one_house_desc() interface{} {
 	house_desc := map[string]interface{}{
 		"hid":         this.Id,
@@ -137,14 +138,14 @@ func (this *House) To_one_house_desc() interface{} {
 	return house_desc
 }
 
-/* 区域信息 table_name = area */  //区域信息是需要我们手动添加到数据库中的
+/* 区域信息 table_name = area */ //区域信息是需要我们手动添加到数据库中的
 type Area struct {
 	Id     int      `json:"aid"`                        //区域编号    1	  2	 3
 	Name   string   `orm:"size(32)" json:"aname"`       //区域名字    海淀 昌平
 	Houses []*House `orm:"reverse(many)" json:"houses"` //区域所有的房屋   与房屋表进行关联
 }
 
-/* 设施信息 table_name = "facility"*/     //设施信息 需要我们提前手动添加的
+/* 设施信息 table_name = "facility"*/ //设施信息 需要我们提前手动添加的
 type Facility struct {
 	Id     int      `json:"fid"`     //设施编号
 	Name   string   `orm:"size(32)"` //设施名字
@@ -181,9 +182,10 @@ type OrderHouse struct {
 	Status      string    `orm:"default(WAIT_ACCEPT)"`                 //订单状态
 	Comment     string    `orm:"size(512)"`                            //订单评论
 	Ctime       time.Time `orm:"auto_now;type(datetime)" json:"ctime"` //每次更新此表，都会更新这个字段
-	Credit      bool												//表示个人征信情况 true表示良好
+	Credit      bool      //表示个人征信情况 true表示良好
 }
-//处理订单信息
+
+// 处理订单信息
 func (this *OrderHouse) To_order_info() interface{} {
 	order_info := map[string]interface{}{
 		"order_id":   this.Id,
@@ -196,12 +198,13 @@ func (this *OrderHouse) To_order_info() interface{} {
 		"amount":     this.Amount,
 		"status":     this.Status,
 		"comment":    this.Comment,
-		"credit":	  this.Credit,
+		"credit":     this.Credit,
 	}
 
 	return order_info
 }
-//数据库的初始化
+
+// 数据库的初始化
 func init() {
 	//调用什么驱动
 	orm.RegisterDriver("mysql", orm.DRMySQL)

@@ -1,12 +1,12 @@
 package handler
 
 import (
+	"IhomeWeb/model"
+	"IhomeWeb/utils"
+	example "PostLogin/proto/example"
 	"context"
-	example "IHome/PostLogin/proto/example"
-	"IHome/IhomeWeb/utils"
-	"github.com/astaxie/beego/orm"
 	"fmt"
-	"IHome/IhomeWeb/model"
+	"github.com/astaxie/beego/orm"
 	"log"
 	"strconv"
 	"time"

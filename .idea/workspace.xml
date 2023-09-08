@@ -5,27 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd1d6e8c-6942-4502-b50b-d4b65e9a7b23" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DeleteSession/handler/example.go" beforeDir="false" afterPath="$PROJECT_DIR$/DeleteSession/handler/example.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DeleteSession/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/DeleteSession/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GetArea/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/GetArea/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GetHouses/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/GetHouses/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GetImageCd/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/GetImageCd/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GetSession/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/GetSession/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GetSmscd/handler/example.go" beforeDir="false" afterPath="$PROJECT_DIR$/GetSmscd/handler/example.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GetSmscd/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/GetSmscd/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GetUserHouses/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/GetUserHouses/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GetUserInfo/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/GetUserInfo/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IhomeWeb/handler/handler.go" beforeDir="false" afterPath="$PROJECT_DIR$/IhomeWeb/handler/handler.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IhomeWeb/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/IhomeWeb/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IhomeWeb/utils/misc.go" beforeDir="false" afterPath="$PROJECT_DIR$/IhomeWeb/utils/misc.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PostAvatar/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/PostAvatar/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PostHouses/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/PostHouses/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PostHousesImage/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/PostHousesImage/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PostLogin/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/PostLogin/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PostRet/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/PostRet/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PostUserAuth/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/PostUserAuth/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PutUserInfo/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/PutUserInfo/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,6 +130,9 @@
     </option>
   </component>
   <component name="GOROOT" url="file:///opt/homebrew/opt/go/libexec" />
+  <component name="Git.Rebase.Settings">
+    <option name="NEW_BASE" value="origin/main" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -298,7 +283,7 @@
     "RunOnceActivity.go.migrated.go.modules.settings": "true",
     "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "Rebasing main",
     "go.import.settings.migrated": "true",
     "go.sdk.automatically.set": "true",
     "last_opened_file_path": "/Users/zhualong",
@@ -390,10 +375,23 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
+    <MESSAGE value="refactor: 添加go work管理机制，优化模块管理策略&#10;&#10;添加go work管理机制，优化模块管理策略" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: 添加go work管理机制，优化模块管理策略&#10;&#10;添加go work管理机制，优化模块管理策略" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>

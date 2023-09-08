@@ -1,10 +1,10 @@
 package main
 
 import (
+	"PostOrders/handler"
+	example "PostOrders/proto/example"
 	"github.com/micro/go-log"
 	"github.com/micro/go-micro"
-	"IHome/PostOrders/handler"
-	example "IHome/PostOrders/proto/example"
 )
 
 func main() {

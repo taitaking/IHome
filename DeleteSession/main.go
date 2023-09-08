@@ -1,8 +1,8 @@
 package main
 
 import (
-	"IHome/DeleteSession/handler"
-	example "IHome/DeleteSession/proto/example"
+	"DeleteSession/handler"
+	example "DeleteSession/proto/example"
 	"github.com/micro/go-log"
 	"github.com/micro/go-micro"
 	"github.com/micro/go-micro/service/grpc"

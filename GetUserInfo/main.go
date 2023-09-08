@@ -1,8 +1,8 @@
 package main
 
 import (
-	"IHome/GetUserInfo/handler"
-	example "IHome/GetUserInfo/proto/example"
+	"GetUserInfo/handler"
+	example "GetUserInfo/proto/example"
 	"github.com/micro/go-micro"
 	"log"
 )

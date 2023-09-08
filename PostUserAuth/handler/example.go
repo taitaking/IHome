@@ -3,13 +3,13 @@ package handler
 import (
 	"context"
 
-	example "IHome/PostUserAuth/proto/example"
+	"IhomeWeb/model"
+	"IhomeWeb/utils"
+	example "PostUserAuth/proto/example"
 	"fmt"
-	"IHome/IhomeWeb/utils"
-	"log"
-	"github.com/garyburd/redigo/redis"
 	"github.com/astaxie/beego/orm"
-	"IHome/IhomeWeb/model"
+	"github.com/garyburd/redigo/redis"
+	"log"
 	"time"
 )
 

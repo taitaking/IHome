@@ -1,8 +1,8 @@
 package main
 
 import (
-	"IHome/PostUserAuth/handler"
-	example "IHome/PostUserAuth/proto/example"
+	"PostUserAuth/handler"
+	example "PostUserAuth/proto/example"
 	"github.com/micro/go-log"
 	"github.com/micro/go-micro"
 	"github.com/micro/go-micro/service/grpc"

@@ -1,0 +1,26 @@
+go 1.20
+
+use (
+	./DeleteSession
+	./GetArea
+	./GetHouseInfo
+	./GetHouses
+	./GetImageCd
+	./GetIndex
+	./GetSession
+	./GetSmscd
+	./GetUserHouses
+	./GetUserInfo
+	./GetUserOrder
+	./IhomeWeb
+	./PostAvatar
+	./PostHouses
+	./PostHousesImage
+	./PostLogin
+	./PostOrders
+	./PostRet
+	./PostUserAuth
+	./PutComment
+	./PutOrders
+	./PutUserInfo
+)

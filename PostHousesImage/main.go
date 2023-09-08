@@ -1,8 +1,8 @@
 package main
 
 import (
-	"IHome/PostHousesImage/handler"
-	example "IHome/PostHousesImage/proto/example"
+	"PostHousesImage/handler"
+	example "PostHousesImage/proto/example"
 	"github.com/micro/go-log"
 	"github.com/micro/go-micro"
 	"github.com/micro/go-micro/service/grpc"
