@@ -7,7 +7,7 @@ import (
 	"context"
 	"fmt"
 	"github.com/astaxie/beego/orm"
-	//"github.com/garyburd/redigo/redis"
+	"github.com/garyburd/redigo/redis"
 	"log"
 	"math/rand"
 	"time"
@@ -43,9 +43,7 @@ func (e *Example) GetSmscd(ctx context.Context, req *example.Request, rsp *examp
 	}
 	//4.获取图片验证码
 	value := bm.Get(req.Id)
-	//value_string, _ := redis.String(value, nil)
-	//TODO 暂时占位
-	value_string := value
+	value_string, _ := redis.String(value, nil)
 	//5.进行对比判断图片验证码是否输入正确
 	if value_string != req.Text {
 		log.Println("图片验证码错误 ", req.Text, value_string)
@@ -67,6 +65,7 @@ func (e *Example) GetSmscd(ctx context.Context, req *example.Request, rsp *examp
 	//加密方式默认
 	messageconfig["signtype"] = "md5"
 
+	//TODO 短信发送看自己用的是哪家的
 	//messagexsend
 	//创建短信发送的句柄
 	//messagexsend := submail.CreateMessageXSend()
